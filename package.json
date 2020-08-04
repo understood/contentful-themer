@@ -1,0 +1,20 @@
+{
+  "name": "contentful-themer",
+  "version": "1.0.0",
+  "description": "![Themer promo image](img/themer-banner-v2.0-github.png?raw=true \"Themer promo\")",
+  "main": "code.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/understood/contentful-themer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/understood/contentful-themer/issues"
+  },
+  "homepage": "https://github.com/understood/contentful-themer#readme"
+}
