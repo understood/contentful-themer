@@ -274,11 +274,11 @@ function getLocalStyles(type) {
         if (colorStyles) {
             colorStyles.forEach(function (color) {
                 var colorObj = {
-                    r: color['paints'][0]['color']['r'] * 255,
-                    g: color['paints'][0]['color']['g'] * 255,
-                    b: color['paints'][0]['color']['b'] * 255
+                    r: color['paints'][0]['color']['r'],
+                    g: color['paints'][0]['color']['g'],
+                    b: color['paints'][0]['color']['b']
                 };
-                var hex = convertRGBToHex(colorObj.r, colorObj.b, colorObj.g);
+                var hex = convertRGBToHex(colorObj.r * 255, colorObj.b * 255, colorObj.g * 255 * 255);
                 var style = {
                     name: styleName(color.name),
                     key: color.key,
@@ -362,11 +362,11 @@ function collectColorStyles(node) {
             // key will only be available for remote styles
             if (objectStyle.key) {
                 var color = {
-                    r: objectStyle['paints'][0]['color']['r'] * 255,
-                    g: objectStyle['paints'][0]['color']['g'] * 255,
-                    b: objectStyle['paints'][0]['color']['b'] * 255
+                    r: objectStyle['paints'][0]['color']['r'],
+                    g: objectStyle['paints'][0]['color']['g'],
+                    b: objectStyle['paints'][0]['color']['b']
                 };
-                var hex = convertRGBToHex(color.r, color.b, color.g);
+                var hex = convertRGBToHex(color.r, color.b * 255, color.g * 255);
                 var style = {
                     name: styleName(objectStyle.name),
                     key: objectStyle.key,
@@ -397,11 +397,11 @@ function collectColorStyles(node) {
             // key will only be available for remote styles
             if (objectStyle.key) {
                 var color = {
-                    r: objectStyle['paints'][0]['color']['r'] * 255,
-                    g: objectStyle['paints'][0]['color']['g'] * 255,
-                    b: objectStyle['paints'][0]['color']['b'] * 255
+                    r: objectStyle['paints'][0]['color']['r'],
+                    g: objectStyle['paints'][0]['color']['g'],
+                    b: objectStyle['paints'][0]['color']['b']
                 };
-                var hex = convertRGBToHex(color.r, color.b, color.g);
+                var hex = convertRGBToHex(color.r, color.b * 255, color.g * 255);
                 var style = {
                     name: styleName(objectStyle.name),
                     key: objectStyle.key,
@@ -423,11 +423,11 @@ function collectColorStyles(node) {
             // key will only be available for remote styles
             if (objectStyle.key) {
                 var color = {
-                    r: objectStyle['paints'][0]['color']['r'] * 255,
-                    g: objectStyle['paints'][0]['color']['g'] * 255,
-                    b: objectStyle['paints'][0]['color']['b'] * 255
+                    r: objectStyle['paints'][0]['color']['r'],
+                    g: objectStyle['paints'][0]['color']['g'],
+                    b: objectStyle['paints'][0]['color']['b']
                 };
-                var hex = convertRGBToHex(color.r, color.b, color.g);
+                var hex = convertRGBToHex(color.r * 255, color.b * 255, color.g * 255);
                 var style = {
                     name: styleName(objectStyle.name),
                     key: objectStyle.key,
@@ -902,5 +902,5 @@ function removeDuplicatesBy(keyFn, array) {
 }
 // convert RGB to HEX Valuue
 function convertRGBToHex(r, g, b) {
-    return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).split('.')[0];
+    return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
 }
