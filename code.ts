@@ -223,12 +223,13 @@ function getLocalStyles (type) {
           g: color['paints'][0]['color']['g'] * 255,
           b: color['paints'][0]['color']['b'] * 255
         }
+        let hex = convertRGBToHex(colorObj.r, colorObj.b, colorObj.g) 
         let style = {
           name: styleName(color.name),
           key: color.key,
           theme: themeName(color.name),
           type: 'PAINT',
-          color: convertRGBToHex(colorObj.r, colorObj.b, colorObj.g)
+          color: hex.split('.')[0]
         }
         if (style.name && style.key && style.theme && style.type) {
           collectedStyleData.push(style)
@@ -304,12 +305,13 @@ function collectColorStyles (node) {
           g: objectStyle['paints'][0]['color']['g'] * 255,
           b: objectStyle['paints'][0]['color']['b'] * 255
         }
+        let hex = convertRGBToHex(color.r, color.b, color.g) 
         let style = {
           name: styleName(objectStyle.name),
           key: objectStyle.key,
           theme: themeName(objectStyle.name),
           type: 'PAINT',
-          color: convertRGBToHex(color.r, color.g, color.b)
+          color: hex.split('.')[0]
         }
         if (style.name && style.key && style.theme && style.type) {
           collectedStyleData.push(style)
@@ -339,12 +341,13 @@ function collectColorStyles (node) {
           g: objectStyle['paints'][0]['color']['g'] * 255,
           b: objectStyle['paints'][0]['color']['b'] * 255
         }
+        let hex = convertRGBToHex(color.r, color.b, color.g)
         let style = {
           name: styleName(objectStyle.name),
           key: objectStyle.key,
           theme: themeName(objectStyle.name),
           type: 'PAINT',
-          color: convertRGBToHex(color.r, color.g, color.b)
+          color: hex.split('.')[0]
         }
         if (style.name && style.key && style.theme && style.type) {
           collectedStyleData.push(style)
@@ -363,12 +366,13 @@ function collectColorStyles (node) {
           g: objectStyle['paints'][0]['color']['g'] * 255,
           b: objectStyle['paints'][0]['color']['b'] * 255
         }
+        let hex = convertRGBToHex(color.r, color.b, color.g)
         let style = {
           name: styleName(objectStyle.name),
           key: objectStyle.key,
           theme: themeName(objectStyle.name),
           type: 'PAINT',
-          color: convertRGBToHex(color.r, color.g, color.b)
+          color: hex.split('.')[0]
         }
         if (style.name && style.key && style.theme && style.type) {
           collectedStyleData.push(style)
