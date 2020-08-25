@@ -229,7 +229,7 @@ function getLocalStyles (type) {
           key: color.key,
           theme: themeName(color.name),
           type: 'PAINT',
-          color: hex.split('.')[0]
+          color: hex
         }
         if (style.name && style.key && style.theme && style.type) {
           collectedStyleData.push(style)
@@ -307,13 +307,13 @@ function collectColorStyles (node) {
         }
         
         let hex = convertRGBToHex(color.r * 255, color.g * 255, color.b * 255) 
-        console.log(color, hex.split('.')[0])
+        console.log(color, hex)
         let style = {
           name: styleName(objectStyle.name),
           key: objectStyle.key,
           theme: themeName(objectStyle.name),
           type: 'PAINT',
-          color: hex.split('.')[0]
+          color: hex
         }
         if (style.name && style.key && style.theme && style.type) {
           collectedStyleData.push(style)
@@ -344,13 +344,13 @@ function collectColorStyles (node) {
           b: objectStyle['paints'][0]['color']['b']
         }
         let hex = convertRGBToHex(color.r * 255, color.g * 255, color.b * 255 * 255)
-        console.log(color, hex.split('.')[0])
+        console.log(color, hex)
         let style = {
           name: styleName(objectStyle.name),
           key: objectStyle.key,
           theme: themeName(objectStyle.name),
           type: 'PAINT',
-          color: hex.split('.')[0]
+          color: hex
         }
         if (style.name && style.key && style.theme && style.type) {
           collectedStyleData.push(style)
@@ -370,13 +370,13 @@ function collectColorStyles (node) {
           b: objectStyle['paints'][0]['color']['b']
         }
         let hex = convertRGBToHex(color.r * 255, color.g * 255, color.b * 255 * 255)
-        console.log(color, hex.split('.')[0])
+        console.log(color, hex)
         let style = {
           name: styleName(objectStyle.name),
           key: objectStyle.key,
           theme: themeName(objectStyle.name),
           type: 'PAINT',
-          color: hex.split('.')[0]
+          color: hex
         }
         if (style.name && style.key && style.theme && style.type) {
           collectedStyleData.push(style)
