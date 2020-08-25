@@ -367,6 +367,7 @@ function collectColorStyles(node) {
                     b: objectStyle['paints'][0]['color']['b']
                 };
                 var hex = convertRGBToHex(color.r, color.b * 255, color.g * 255);
+                console.log(color, hex);
                 var style = {
                     name: styleName(objectStyle.name),
                     key: objectStyle.key,
@@ -402,6 +403,7 @@ function collectColorStyles(node) {
                     b: objectStyle['paints'][0]['color']['b']
                 };
                 var hex = convertRGBToHex(color.r, color.b * 255, color.g * 255);
+                console.log(color, hex);
                 var style = {
                     name: styleName(objectStyle.name),
                     key: objectStyle.key,
@@ -428,6 +430,7 @@ function collectColorStyles(node) {
                     b: objectStyle['paints'][0]['color']['b']
                 };
                 var hex = convertRGBToHex(color.r * 255, color.b * 255, color.g * 255);
+                console.log(color, hex);
                 var style = {
                     name: styleName(objectStyle.name),
                     key: objectStyle.key,
