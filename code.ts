@@ -306,7 +306,7 @@ function collectColorStyles (node) {
           b: objectStyle['paints'][0]['color']['b']
         }
         
-        let hex = convertRGBToHex(color.r, color.b * 255, color.g * 255) 
+        let hex = convertRGBToHex(color.r * 255, color.b * 255, color.g * 255) 
         console.log(color, hex.split('.')[0])
         let style = {
           name: styleName(objectStyle.name),
@@ -343,7 +343,7 @@ function collectColorStyles (node) {
           g: objectStyle['paints'][0]['color']['g'],
           b: objectStyle['paints'][0]['color']['b']
         }
-        let hex = convertRGBToHex(color.r, color.b * 255, color.g * 255)
+        let hex = convertRGBToHex(color.r * 255, color.b * 255, color.g * 255)
         console.log(color, hex.split('.')[0])
         let style = {
           name: styleName(objectStyle.name),
