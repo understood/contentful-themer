@@ -826,5 +826,7 @@ function removeDuplicatesBy (keyFn, array) {
 
 // convert RGB to HEX Valuue
 function convertRGBToHex(r,g,b) {
-  return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)
+  const pre = "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)
+  const post = pre.split('.')[0]
+  return post
 }
