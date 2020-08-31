@@ -278,13 +278,13 @@ function getLocalStyles(type) {
                     g: color['paints'][0]['color']['g'],
                     b: color['paints'][0]['color']['b']
                 };
-                var hex = convertRGBToHex(colorObj.r * 255, colorObj.b * 255, colorObj.g * 255 * 255);
+                var hex = convertRGBToHex(colorObj.r * 255, colorObj.g * 255, colorObj.b * 255);
                 var style = {
                     name: styleName(color.name),
                     key: color.key,
                     theme: themeName(color.name),
                     type: 'PAINT',
-                    color: hex.split('.')[0]
+                    color: hex
                 };
                 if (style.name && style.key && style.theme && style.type) {
                     collectedStyleData.push(style);
@@ -366,13 +366,14 @@ function collectColorStyles(node) {
                     g: objectStyle['paints'][0]['color']['g'],
                     b: objectStyle['paints'][0]['color']['b']
                 };
-                var hex = convertRGBToHex(color.r, color.b * 255, color.g * 255);
+                var hex = convertRGBToHex(color.r * 255, color.g * 255, color.b * 255);
+                console.log({ R: color.r * 255, G: color.g * 255, B: color.b * 255 });
                 var style = {
                     name: styleName(objectStyle.name),
                     key: objectStyle.key,
                     theme: themeName(objectStyle.name),
                     type: 'PAINT',
-                    color: hex.split('.')[0]
+                    color: hex
                 };
                 if (style.name && style.key && style.theme && style.type) {
                     collectedStyleData.push(style);
@@ -401,13 +402,14 @@ function collectColorStyles(node) {
                     g: objectStyle['paints'][0]['color']['g'],
                     b: objectStyle['paints'][0]['color']['b']
                 };
-                var hex = convertRGBToHex(color.r, color.b * 255, color.g * 255);
+                var hex = convertRGBToHex(color.r * 255, color.g * 255, color.b * 255);
+                console.log({ R: color.r * 255, G: color.g * 255, B: color.b * 255 });
                 var style = {
                     name: styleName(objectStyle.name),
                     key: objectStyle.key,
                     theme: themeName(objectStyle.name),
                     type: 'PAINT',
-                    color: hex.split('.')[0]
+                    color: hex
                 };
                 if (style.name && style.key && style.theme && style.type) {
                     collectedStyleData.push(style);
@@ -427,13 +429,14 @@ function collectColorStyles(node) {
                     g: objectStyle['paints'][0]['color']['g'],
                     b: objectStyle['paints'][0]['color']['b']
                 };
-                var hex = convertRGBToHex(color.r * 255, color.b * 255, color.g * 255);
+                var hex = convertRGBToHex(color.r * 255, color.g * 255, color.b * 255);
+                console.log({ R: color.r * 255, G: color.g * 255, B: color.b * 255 });
                 var style = {
                     name: styleName(objectStyle.name),
                     key: objectStyle.key,
                     theme: themeName(objectStyle.name),
                     type: 'PAINT',
-                    color: hex.split('.')[0]
+                    color: hex
                 };
                 if (style.name && style.key && style.theme && style.type) {
                     collectedStyleData.push(style);
@@ -902,5 +905,7 @@ function removeDuplicatesBy(keyFn, array) {
 }
 // convert RGB to HEX Valuue
 function convertRGBToHex(r, g, b) {
-    return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+    var pre = "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+    var post = pre.split('.')[0];
+    return post;
 }
